@@ -2,8 +2,6 @@ import traceback
 import time
 import speech_recognition as sr
 
-import ShowImage
-
 isRunning = True
 content = ""
 recognizer = None
@@ -29,7 +27,7 @@ def initRecognizer(custom_callback):
     global recognizer
     recognizer = sr.Recognizer()
 
-def startRecognize(content):
+def startRecognize():
     try:
         with sr.Microphone(device_index=2) as source:
             print("\n" + ColorTags.OKGREEN + 
@@ -37,11 +35,7 @@ def startRecognize(content):
                 ColorTags.ENDC)
 
             global recognizer
-            recognizer.adjust_for_ambient_noise(source)
-            
-            if content:
-                print("Show Image: " + content)
-                ShowImage.show(content)
+            recognizer.adjust_for_ambient_noise(source)                            
             
             listen_callback(recognizer.listen(source, timeout = 10))
         
