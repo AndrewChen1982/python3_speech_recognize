@@ -2,14 +2,14 @@
 
 ## Google speech recognition and ITRI(工研院) / espeak text to speech(TTS) in python3
 
-## Google speech recognition:
+## 1. Google speech recognition:
 ### Step:
 1. Install python package "traceback", "time", "speech_recognition".
     * I use apt for installing package: "sudo apt-get install traceback time speech_recognition -y".
 
 2. Calling function initRecognizer(callback_function) **`only once`**.
 
-3. Calling function startRecognize()
+3. Calling function startRecognize() at any time you like to do speech Recognition.
 
 > Note: In function startRecognize, there is an argument "device_index"
 > ```python
@@ -35,4 +35,15 @@
 > ```
 > `Microphone with name "Blue Snowball: USB Audio (hw:1,0)" found for Microphone(device_index=3)` might be you really want to use, so that your device_index should set be 3.
 
-##Text to speech by ITRI or espeak:
+## 2. Text to speech by ITRI or espeak:
+## Setp:
+1. Install python package "traceback", "time", "espeak", "ntpath", "urllib" ,"suds".
+    * I use apt for installing package: "sudo apt-get install time espeak ntpath urllib suds -y".
+
+2. Calling function "doTTS" from class ITRI_TTS or eSpeakTTS with text as parameter.
+
+3. Function "doTTS" will generate a wave file and retun file name.
+
+4. Just play out wave file, you will hear the voice's content as the same text you put in.
+
+## end
