@@ -41,6 +41,7 @@
     * I use apt for installing package: "sudo apt-get install time espeak ntpath urllib suds -y".
 
 2. Calling function "doTTS" from class ITRI_TTS or eSpeakTTS with text as parameter.
+    * If you try to use ITRI tts, you need to register to ITRI to get account and password for using ITRI's web service. [ITRI TTS](http://tts.itri.org.tw/ "http://tts.itri.org.tw/")    
 
 3. Function "doTTS" will generate a wave file and retun file name.
 
